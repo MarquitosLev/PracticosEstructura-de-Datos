@@ -2,13 +2,8 @@ from Autor import Autor
 from Categoria import Categoria
 
 class Libro:
-    # num_invent = 0
-    # titulo = ""
-    # autor= Autor
-    # categoria= Categoria
-    # anio_publi = 0
 
-    def __init__(self, num_invent, titulo, Autor, Categoria, anio_publi):
+    def __init__(self, num_invent:int, titulo:str, Autor:Autor, Categoria:Categoria, anio_publi: int):
         self.num_invent = num_invent
         self.titulo = titulo
         self.autor = Autor
@@ -21,13 +16,6 @@ class Libro:
 
     #retorna si 2 objetos de la misma clase son iguales
     def __eq__(self, otro):
-        if self.titulo == otro.titulo and self.num_invent == otro.num_invent and self.autor == otro.autor:
+        if self.anio_publi == otro.anio_publi and self.titulo == otro.titulo and self.autor == otro.autor:
             return True
         else: return False
-        
-        
-            
-n1 = Libro(3, "HP", "JKR", "Fantasy", 1991)
-n2 = Libro(3, "HP", "JKR", "Fantasy", 1991)
-print(n1 == n2)
-
