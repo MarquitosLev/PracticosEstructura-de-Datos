@@ -32,8 +32,8 @@ l2 = Libro(11, "Joker", "El bromas", "Humor", 1996)
 l3 = Libro(13, "Señor de los anillos", "JR Tolkien", "Fantasia", 1996)
 f = libro_Cliente()
 lista = [l1, l2, l3]
-# print(f.imprimir_libros(lista))
-# print(f.filtrar_por_anio(lista, 1991))
-# print(f.filtrar_por_autor(lista, "JKR"))
-# print(f.filtrar_por_categoria(lista, "Fantasia"))
+print(f.imprimir_libros(lista))
+print(f.filtrar_por_anio(lista, 1991))
+print(f.filtrar_por_autor(lista, "JKR"))
+print(f.filtrar_por_categoria(lista, "Fantasia"))
 # Quitar # para probar
