@@ -1,6 +1,4 @@
 class Autor:
-    # nombre = ""
-    # apellido = ""
 
     def __init__(self, nombre, apellido):
         self.nombre = nombre
