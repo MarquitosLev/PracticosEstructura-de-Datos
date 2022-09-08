@@ -1,3 +1,4 @@
+from typing_extensions import Self
 from Persona import Persona
 from Raza import Raza
 class Mascota:
@@ -16,3 +17,7 @@ class Mascota:
         if self.num_registro == otro.num_registro and self.nombre == otro.nombre and self.anio_nacimiento == otro.anio_nacimiento:
             return True
         else: return False    
+
+    @property
+    def edad() -> int:
+        return 2022 - Self.anio_nacimiento
