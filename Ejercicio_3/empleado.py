@@ -13,7 +13,7 @@ class Empleado:
         return "-Legajo: %s\n -Documento: %s\n -Apellido: %s\n -Nombre: %s\n -Oficina: %s" % (self.Legajo, self.Documento, self.Apellido, self.Nombre, self.Oficina)
     
     def __repr__(self) -> str:
-        return "-Legajo: %s\n -Documento: %s\n -Apellido: %s\n -Nombre: %s\n -Oficina: %s" % (self.Legajo, self.Documento, self.Apellido, self.Nombre, self.Oficina)
+        return self.__str__()
     
     def __eq__(self, otro : object) -> bool:
         if self.Documento == otro.Documento:
