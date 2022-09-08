@@ -8,3 +8,6 @@ class Especie:
 
     def __eq__(self, otro):
         return self.nombre == otro.nombre
+
+    def __repr__(self) -> str:
+        return "- Nombre de Especie: %s" % self.nombre 

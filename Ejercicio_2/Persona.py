@@ -12,3 +12,6 @@ class Persona:
         if self.apellido == otro.apellido and self.nombre == otro.nombre and self.documento == otro.documento:
             return True
         else: return False
+
+    def __repr__(self) -> str:
+        return self.__str__()
