@@ -11,7 +11,7 @@ class Oficina:
         return "-Nombre: %s\n -HoraEntrada: %s\n -HoraSalida: %s" % (self.Nombre, self.HoraEntrada, self.HoraSalida)
     
     def __repr__(self) -> str:
-        return "-Nombre: %s\n -HoraEntrada: %s\n -HoraSalida: %s" % (self.Nombre, self.HoraEntrada, self.HoraSalida)
+        return self.__str__()
     
     def __eq__(self, otro: object) -> bool:
         if self.Nombre == otro.Nombre and self.HoraEntrada == otro.HoraEntrada and self.HoraSalida == otro.HoraSalida:
