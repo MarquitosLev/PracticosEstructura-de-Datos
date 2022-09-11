@@ -1,31 +1,55 @@
+from re import M
+from Especie import Especie
+from Persona import Persona
+from Raza import Raza
 from Mascota import Mascota
-#bichitos_cliente
-def imprimir(mascotas : list)-> None:
-    for i in mascotas: print (i)
+class bichito_cliente:
+    def imprimir(mascotas : list)-> None:
+        for i in mascotas: print (i)
 
-def filtrar_gerontes(mascotas : list)-> list:
-    for i in mascotas: 
-        if i.calc.edad > 12:
-            print (i)
+    def filtrar_gerontes(mascotas : list)-> list:
+        for i in mascotas: 
+            if i.calc.edad > 12:
+                print (i)
 
-def filtrar_por_especie(mascotas : list, especie : str):
-    for i in mascotas:
-        if i.especie == especie:
-            print(i)
+    def filtrar_por_especie(mascotas : list, especie : str):
+        for i in mascotas:
+            if i.especie == especie:
+                print(i)
 
-#def max_mascotero(mascotas : list)-> Persona:
-    print(counter.most_common(Persona))
+    #def max_mascotero(mascotas : list)-> Persona:
+        #print(counter.most_common(Persona))
 
-M1 = Mascota(5, "Tobi", "Labrador", "Perro", "2010", "Messi", "Leonel", 33500541)
-M2 = Mascota(10, "Garfield", "Montes", "Gato", "2017", "Ferndanez", "Karla", 3950249)
-M3 = Mascota(15, "Negro", "Caniche", "Perro", "2007", "Torres", "Gabriel", 31560521)
-M4 = Mascota(2, "Carlos", "Papagayo", "Loro", "2020", "Alvarez", "Julian", 41610549)
-M5 = Mascota(5, "Hector", "Gris oriental", "Canguro", "2004", "Aguero", "Sergio", 33431575)
-M = Mascota()
-lista = [M1, M2, M3, M4, M5]
+especie = [Especie("Perro")]
+raza = [Raza("Labrador", especie)]
+persona = [Persona("Messi", "Leonel", 33500541)]
+mascota1 = [Mascota(10, "Tobi", raza, 2010, persona)]
 
-print(f.filtrar_por_anio(lista, 1991))
-print(M.imprimir(lista))
-print(M.filtrar_gerontes(lista))
-print(M.filtrar_por_especie(lista, "Perro"))
+especie = [Especie("Gato")]
+raza = [Raza("Montes", especie)]
+persona = [Persona("Ferndandez", "Karla", 35520574)]
+mascota2 = [Mascota(11, "Garfield", raza, 2020, persona)]
+
+especie = [Especie("Perro")]
+raza = [Raza("Caniche", especie)]
+persona = [Persona("Perez", "Lucho", 38156141)]
+mascota3 = [Mascota(15, "Peco", raza, 2015, persona)]
+
+especie = [Especie("Loro")]
+raza = [Raza("Papagayo", especie)]
+persona = [Persona("Alvarez", "Julian", 40521562)]
+mascota4 = [Mascota(5, "Carlos", raza, 2021, persona)]
+
+especie = [Especie("Canguro")]
+raza = [Raza("Gris Oriental", especie)]
+persona = [Persona("Messi", "Leonel", 33500541)]
+mascota5 = [Mascota(10, "Hector", raza, 2009, persona)]
+
+m = bichito_cliente()
+lista = [mascota1, mascota2, mascota3, mascota4, mascota5]
+
+#print(m.filtrar_por_anio(lista, 1991))
+print(m.imprimir(lista))
+print(m.filtrar_gerontes(lista))
+print(m.filtrar_por_especie(lista, "Perro"))
 #print(M.max_mascotero(lista))
