@@ -2,28 +2,29 @@ from Especie import Especie
 from Persona import Persona
 from Raza import Raza
 from Mascota import Mascota
-class bichito_cliente:
-    def imprimir(self, mascotas : list)-> None:
+
+def imprimir(mascotas : list)-> None:
+    for i in mascotas: 
         print("\n" + "*" * 25 + "\n")
-        for i in mascotas: 
-            print (i)
+        print(i)
+    return ""
+
+def filtrar_gerontes(mascotas : list)-> list:
+    for i in mascotas: 
+        if i.calc_edad() > 12:
             print("\n" + "*" * 25 + "\n")
+            print (i)
+    return ""
 
-    def filtrar_gerontes(self, mascotas : list)-> list:
-        print("\n" + "*" * 25 + "\n")
-        for i in mascotas: 
-            if i.calc_edad() > 12:
-                print("\n" + "*" * 25 + "\n")
-                print (i)
+def filtrar_por_especie(mascotas : list, especie : Especie):
+    for i in mascotas:
+        if i.especie == especie: #Como ingresar al atributo "Especie" de raza
+            print("\n" + "*" * 25 + "\n")
+            print(i)
+    return ""
 
-    def filtrar_por_especie(self, mascotas : list, especie : Especie):
-        for i in mascotas:
-            if i.especie == especie:
-                print("\n" + "*" * 25 + "\n")
-                print(i)
-
-    def max_mascotero(self, mascotas : list)-> Persona:
-        print(counter.most_common(Persona))
+# def max_mascotero(mascotas : list)-> Persona:
+#     print(counter.most_common(Persona))
 
 especie = [Especie("Perro")]
 raza = [Raza("Labrador", especie)]
@@ -48,13 +49,14 @@ mascota4 = Mascota(5, "Carlos", raza, 2021, persona)
 especie = [Especie("Canguro")]
 raza = [Raza("Gris Oriental", especie)]
 persona = [Persona("Gomez", "Richard", 33500545)]
-mascota5 = Mascota(10, "Hector", raza, 2008, persona)
+mascota5 = Mascota(20, "Hector", raza, 2008, persona)
 
-m = bichito_cliente()
-lista = [mascota1, mascota2, mascota3, mascota4, mascota5
-]
+lista = [mascota1, mascota2, mascota3, mascota4, mascota5]
 
-print(m.imprimir(lista))
-print(m.filtrar_gerontes(lista))
-print(m.filtrar_por_especie(lista, "Perro"))
+print("Lista: ")
+print(imprimir(lista))
+print("Filtrado Gerontes: ")
+print(filtrar_gerontes(lista))
+print("Filtrado por especies: ")
+#print(filtrar_por_especie(lista, "Perro"))
 #print(m.max_mascotero(lista))

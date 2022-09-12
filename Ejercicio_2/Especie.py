@@ -4,10 +4,10 @@ class Especie:
         self.nombre = nombre
 
     def __str__(self) -> str:
-        return "- Nombre de Especie: %s" % self.nombre 
+        return "- Especie:", self.nombre 
 
     def __eq__(self, otro):
         return self.nombre == otro.nombre
 
     def __repr__(self) -> str:
-        return "- Nombre de Especie: %s" % self.nombre 
+        return "- Especie: %s" %self.nombre 

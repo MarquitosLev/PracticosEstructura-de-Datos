@@ -1,12 +1,12 @@
 from Especie import Especie
 class Raza:
 
-    def __init__(self, nombre:str, Especie:Especie):
+    def __init__(self, nombre:str, especie:Especie):
         self.nombre = nombre
-        self.especie = Especie
+        self.especie = especie
 
     def __str__(self):
-        return "- Nombre: %s\n - Especie: %s"% (self.nombre, self.especie) 
+        return "- Nombre: %s\n- Especie: %s"% (self.nombre, self.especie) 
 
     def __eq__(self, otro):
         if self.nombre == otro.nombre and self.especie == otro.especie:
