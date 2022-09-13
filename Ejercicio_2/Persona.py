@@ -6,7 +6,7 @@ class Persona:
         self.documento = documento
         
     def __str__(self) -> str:
-        return "- Apellido: %s\n- Nombre: %s\n- Documento: %s" % (self.apellido, self.nombre, self.documento)
+        return f"\n{self.apellido} {self.nombre} {self.documento}\n"
         
     def __eq__(self, otro):
         if self.apellido == otro.apellido and self.nombre == otro.nombre and self.documento == otro.documento:

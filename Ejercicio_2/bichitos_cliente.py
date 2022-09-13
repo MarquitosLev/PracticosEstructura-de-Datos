@@ -4,12 +4,14 @@ from Raza import Raza
 from Mascota import Mascota
 
 def imprimir(mascotas : list)-> None:
+    print("{titulo:*^40}".format(titulo = "Lista"))
     for i in mascotas: 
-        print("\n" + "*" * 25 + "\n")
+        print("\n" + "*" * 40 + "\n")
         print(i)
     return ""
 
 def filtrar_gerontes(mascotas : list)-> list: #Retorna una lista
+    print("{titulo:*^40}".format(titulo = "Lista de Gerontes"))
     lista = []
     for i in mascotas: 
         if i.calc_edad() > 12:
@@ -17,12 +19,15 @@ def filtrar_gerontes(mascotas : list)-> list: #Retorna una lista
     return lista
 
 def filtrar_por_especie(mascotas : list, especie : Especie):
+    print("{titulo:*^40}".format(titulo = "Lista por especie"))
     for i in mascotas:
         if i.raza.especie == especie:
-            print(i)#AtributteError: 'str' object has no attributte 'nombre'
-
+            print("\n" + "*" * 40 + "\n")
+            print(i)
+    return("\n" + "*" * 40 + "\n")
 
 def max_mascotero(mascotas : list)-> Persona:
+    print("{titulo:*^40}".format(titulo = "Mascotero"))
     max = 0
     pers = Persona
     for i in mascotas:
@@ -62,11 +67,7 @@ mascota5 = Mascota(20, "Hector", raza5, 2008, persona5)
 
 lista = [mascota1, mascota2, mascota3, mascota4, mascota5]
 
-# print("Lista: ")
-# print(imprimir(lista))
-# print("Filtrado Gerontes: ")
-# print(filtrar_gerontes(lista))
-print("Filtrado por especies: ")
-print(filtrar_por_especie(lista, "Perro"))
-# print("Duenio con mas mascotas: ")
-# print(max_mascotero(lista))
+print(imprimir(lista))
+print(filtrar_gerontes(lista))
+print(filtrar_por_especie(lista, especie3))
+print(max_mascotero(lista))

@@ -10,7 +10,7 @@ class Mascota:
         self.persona = Persona
 
     def __str__(self):
-        return "- N° Registro: %s\n- Nombre: %s\n- Raza: %s\n- Anio de nacimiento: %s\n- Duenio/amo %s" % (self.num_registro, self.nombre, self.raza, self.anio_nacimiento, self.persona)
+        return f"\n- N° Registro: {self.num_registro}\n- Nombre: {self.nombre}\n- Nombre de Raza: {self.raza.nombre}\n- Especie de raza: {self.raza.especie.nombre}\n- Anio de nacimiento: {self.anio_nacimiento}\n- Duenio/amo:  {self.persona}"
 
     def __eq__(self, otro):
         if self.num_registro == otro.num_registro and self.nombre == otro.nombre and self.anio_nacimiento == otro.anio_nacimiento:

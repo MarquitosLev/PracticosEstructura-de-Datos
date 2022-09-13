@@ -10,4 +10,4 @@ class Especie:
         return self.nombre == otro.nombre
 
     def __repr__(self) -> str:
-        return "- Especie: %s" %self.nombre 
+        return "- Especie: %s" % (self.nombre)

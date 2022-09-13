@@ -5,8 +5,8 @@ class Raza:
         self.nombre = nombre
         self.especie = especie
 
-    def __str__(self):
-        return "- Nombre: %s\n- Especie: %s"% (self.nombre, self.especie) 
+    def __str__(self) -> str:
+        return f"{self.nombre} {self.especie.nombre}"
 
     def __eq__(self, otro):
         if self.nombre == otro.nombre and self.especie == otro.especie:
