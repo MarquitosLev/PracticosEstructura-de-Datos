@@ -20,3 +20,9 @@ class Empleado:
             return True
         else:
             return False
+    
+    def __lt__(self, other : object):
+        if self.Legajo > other.Legajo:
+            return True
+        else:
+            return False
