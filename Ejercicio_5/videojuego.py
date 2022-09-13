@@ -1,7 +1,8 @@
-
+from Empresa import Empresa
 from datetime import datetime
-
-class videojuego:
+from Plataforma import Plataforma
+from Genero import Genero
+class Videojuego:
 
     def __init__(self, titulo:str, genero:Genero, plataformas:list, descripcion:str, precio:float, emp_desarrolladora: Empresa, emp_distribuidora: Empresa, fecha_lanzamiento: datetime.date, ranking_metacritic: float) -> None:
             self.titulo = titulo
