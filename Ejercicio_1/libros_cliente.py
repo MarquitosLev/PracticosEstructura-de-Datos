@@ -2,49 +2,52 @@ from Autor import Autor
 from Categoria import Categoria
 from Libro import Libro
 
-class libro_Cliente:
+def imprimir_libros(libros: list) -> None:
+    print("{titulo:*^40}".format(titulo = "Lista de Libros"))
+    for i in libros: 
+        print("\n" + "*" * 40 + "\n")
+        print(i)
 
-    def imprimir_libros(self, libros: list) -> None:
-        for i in libros: 
-            print("\n" + "*" * 25 + "\n")
-            print(i)
-            
-    def filtrar_por_categoria(self, libros: list, cat: Categoria) -> list:
-        for i in libros:
-            if i.categoria == cat: 
-                print("\n" + "*" * 25 + "\n")
-                print(i)
-    
-    def filtrar_por_autor(self, libros : list, autor : Autor)-> list:
-        for i in libros:
-            if i.autor == autor: 
-                print("\n" + "*" * 25 + "\n")
-                print(i)
-    
-    def filtrar_por_anio(self, libros :  list, anio :  int)-> list:
-        for i in libros:
-            if i.anio_publi == anio: 
-                print("\n" + "*" * 25 + "\n")
-                print(i)
+def filtrar_por_categoria(libros: list, cat: Categoria) -> list:
+    print("\n{titulo:*^40}\n".format(titulo = "Lista filtrado por Categoria"))
+    lista_cat = []
+    for i in libros:
+        if i.categoria == cat: 
+            lista_cat.append(i)
+    return(lista_cat)
 
-l1 = Libro(4, "HP", "JKR", "Fantasia", 1991)
-l2 = Libro(11, "Joker", "Jerry Robinson", "comic", 1940)
-l3 = Libro(13, "Señor de los anillos", "JR Tolkien", "Fantasia", 1996)
-f = libro_Cliente()
+def filtrar_por_autor(libros : list, autor : Autor)-> list:
+    print("\n{titulo:*^40}\n".format(titulo = "Lista filtrado por Autor"))
+    lista_aut = []
+    for i in libros:
+        if i.autor == autor: 
+            lista_aut.append(i)
+    return lista_aut
+
+def filtrar_por_anio(libros :  list, anio :  int)-> list:
+    print("\n{titulo:*^40}\n".format(titulo = "Lista filtrado por anio"))
+    lista_anio = []
+    for i in libros:
+        if i.anio_publi == anio: 
+            lista_anio.append(i)
+    return lista_anio
+
+
+autor1 = Autor("Joan", "Rowling")
+cate1 = Categoria("Fantasia")
+l1 = Libro(7, "Harry Potter", autor1, cate1, 1991)
+
+cate2 = Categoria("Comic")
+autor2 = Autor("Jerry", "Robinson")
+l2 = Libro(11, "Joker", autor2, cate2, 1940)
+
+cate3 = Categoria("Fantasia")
+autor3 = Autor("JR", "Tolkien")
+l3 = Libro(13, "Señor de los anillos", autor3 ,cate3, 1996)
+
 lista = [l1, l2, l3]
-<<<<<<< HEAD
-print(f.imprimir_libros(lista))
-print(f.filtrar_por_anio(lista, 1991))
-print(f.filtrar_por_autor(lista, "JKR"))
-print(f.filtrar_por_categoria(lista, "Fantasia"))
-# Quitar # para probar
-=======
 
-#print(f.imprimir_libros(lista))
-#print("\n filtrado por año: ")
-#print(f.filtrar_por_anio(lista, 1996))
-#print("\n filtrado por autor: ")
-#print(f.filtrar_por_autor(lista, "JR Tolkien"))
-#print("\n filtrado por categoría: ")
-#print(f.filtrar_por_categoria(lista, "comic"))
->>>>>>> a0a6d8e06ecc80fa1c660e72d8570771a38f0ba6
+print(imprimir_libros(lista))
+print(filtrar_por_anio(lista, 1991)) #imprime libros con anio de publicacion 1991
+print(filtrar_por_autor(lista, autor2))  #imprime libros con autor Jerry Robinson
+print(filtrar_por_categoria(lista, cate3))  #imprime libros con categoria Fantasia
