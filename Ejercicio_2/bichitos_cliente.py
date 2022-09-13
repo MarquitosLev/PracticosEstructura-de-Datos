@@ -9,54 +9,64 @@ def imprimir(mascotas : list)-> None:
         print(i)
     return ""
 
-def filtrar_gerontes(mascotas : list)-> list:
+def filtrar_gerontes(mascotas : list)-> list: #Retorna una lista
+    lista = []
     for i in mascotas: 
         if i.calc_edad() > 12:
-            print("\n" + "*" * 25 + "\n")
-            print (i)
-    return ""
+            lista.append(i)
+    return lista
 
 def filtrar_por_especie(mascotas : list, especie : Especie):
     for i in mascotas:
-        if i.especie == especie: #Como ingresar al atributo "Especie" de raza
-            print("\n" + "*" * 25 + "\n")
-            print(i)
-    return ""
+        if i.raza.especie == especie:
+            print(i)#AtributteError: 'str' object has no attributte 'nombre'
 
-# def max_mascotero(mascotas : list)-> Persona:
-#     print(counter.most_common(Persona))
 
-especie = [Especie("Perro")]
-raza = [Raza("Labrador", especie)]
-persona = [Persona("Messi", "Leonel", 33500541)]
-mascota1 = Mascota(10, "Tobi", raza, 2010, persona)
+def max_mascotero(mascotas : list)-> Persona:
+    max = 0
+    pers = Persona
+    for i in mascotas:
+        cont = 0
+        for j in mascotas:
+            if i.persona == j.persona:
+                cont += 1 
+        if cont > max:
+            max = cont
+            pers = i.persona
+    return pers
 
-especie = [Especie("Gato")]
-raza = [Raza("Montes", especie)]
-persona = [Persona("Ferndandez", "Karla", 35520574)]
-mascota2 = Mascota(11, "Garfield", raza, 2020, persona)
+especie1 = Especie("Perro")
+raza1 = Raza("Labrador", especie1)
+persona1 = Persona("Messi", "Leonel", 33500541)
+mascota1 = Mascota(10, "Tobi", raza1, 2010, persona1)
 
-especie = [Especie("Perro")]
-raza = [Raza("Caniche", especie)]
-persona = [Persona("Perez", "Lucho", 38156141)]
-mascota3 = Mascota(15, "Peco", raza, 2002, persona)
+especie2 = Especie("Gato")
+raza2 = Raza("Montes", especie2)
+persona2 = Persona("Ferndandez", "Karla", 35520574)
+mascota2 = Mascota(11, "Garfield", raza2, 2020, persona2)
 
-especie = [Especie("Loro")]
-raza = [Raza("Papagayo", especie)]
-persona = [Persona("Alvarez", "Julian", 40521562)]
-mascota4 = Mascota(5, "Carlos", raza, 2021, persona)
+especie3 = Especie("Perro")
+raza3 = Raza("Caniche", especie3)
+persona3 = Persona("Messi", "Leonel", 33500541)
+mascota3 = Mascota(15, "Peco", raza3, 2002, persona3)
 
-especie = [Especie("Canguro")]
-raza = [Raza("Gris Oriental", especie)]
-persona = [Persona("Gomez", "Richard", 33500545)]
-mascota5 = Mascota(20, "Hector", raza, 2008, persona)
+especie4 = Especie("Loro")
+raza4 = Raza("Papagayo", especie4)
+persona4 = Persona("Alvarez", "Julian", 40521562)
+mascota4 = Mascota(5, "Carlos", raza4, 2021, persona4)
+
+especie5 = Especie("Canguro")
+raza5 = Raza("Gris Oriental", especie5)
+persona5 = Persona("Gomez", "Richard", 33500545)
+mascota5 = Mascota(20, "Hector", raza5, 2008, persona5)
 
 lista = [mascota1, mascota2, mascota3, mascota4, mascota5]
 
-print("Lista: ")
-print(imprimir(lista))
-print("Filtrado Gerontes: ")
-print(filtrar_gerontes(lista))
+# print("Lista: ")
+# print(imprimir(lista))
+# print("Filtrado Gerontes: ")
+# print(filtrar_gerontes(lista))
 print("Filtrado por especies: ")
-#print(filtrar_por_especie(lista, "Perro"))
-#print(m.max_mascotero(lista))
+print(filtrar_por_especie(lista, "Perro"))
+# print("Duenio con mas mascotas: ")
+# print(max_mascotero(lista))
