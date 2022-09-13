@@ -7,3 +7,6 @@ class Empresa:
     
     def __eq__(self, otro):
         return self.nombre == otro.nombre
+
+    def __repr__(self) -> str:
+         return self.__str__()

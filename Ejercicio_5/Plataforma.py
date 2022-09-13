@@ -8,3 +8,6 @@ class Plataforma:
     
     def __eq__(self, otro):
         return self.nombre == otro.nombre and self.es_portatil == otro.es_portatil
+    
+    def __repr__(self) -> str:
+         return self.__str__()
