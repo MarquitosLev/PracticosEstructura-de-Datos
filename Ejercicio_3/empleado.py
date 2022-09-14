@@ -10,7 +10,7 @@ class Empleado:
         self.Oficina = Oficina
     
     def __str__(self) -> str:
-        return "-Legajo: %s\n -Documento: %s\n -Apellido: %s\n -Nombre: %s\n -Oficina: %s" % (self.Legajo, self.Documento, self.Apellido, self.Nombre, self.Oficina)
+        return "\n  - Legajo: %s\n  - Documento: %s\n  - Apellido: %s\n  - Nombre: %s\n  - Oficina: %s" % (self.Legajo, self.Documento, self.Apellido, self.Nombre, self.Oficina)
     
     def __repr__(self) -> str:
         return self.__str__()

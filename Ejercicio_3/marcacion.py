@@ -14,7 +14,7 @@ class Marcacion:
         self.Ultimo_numRegistro = self.num_registro
     
     def __str__(self) -> str:
-        return "-Numero de registro: %s\n -Empleado: %s\n -FechaHora: %s\n -Tipo: %s" % (self.num_registro, self.Empleado, self.FechaHora, self.Tipo)
+        return "* Numero de registro: %s\n* Empleado: %s\n* Fecha-Hora: %s\n* Tipo: %s" % (self.num_registro, self.Empleado, self.FechaHora, self.Tipo)
     
     def __repr__(self) -> str:
         return self.__str__()

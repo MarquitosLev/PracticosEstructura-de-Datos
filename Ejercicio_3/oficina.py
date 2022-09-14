@@ -8,7 +8,7 @@ class Oficina:
         self.HoraSalida = HoraSalida
 
     def __str__(self) -> str:
-        return "-Nombre: %s\n -HoraEntrada: %s\n -HoraSalida: %s" % (self.Nombre, self.HoraEntrada, self.HoraSalida)
+        return "\n   - Nombre: %s\n   - Hora Entrada: %s\n   - Hora Salida: %s" % (self.Nombre, self.HoraEntrada, self.HoraSalida)
     
     def __repr__(self) -> str:
         return self.__str__()
