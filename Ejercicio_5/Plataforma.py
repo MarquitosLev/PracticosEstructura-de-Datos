@@ -4,7 +4,7 @@ class Plataforma:
         self.es_portatil = es_portatil
 
     def __str__(self) -> str:
-        return "- Nombre: %s\n- Es portatil: %s" % (self.nombre, self.es_portatil)
+        return f"En {self.nombre}, es portatil? {self.es_portatil}"
     
     def __eq__(self, otro):
         return self.nombre == otro.nombre and self.es_portatil == otro.es_portatil
