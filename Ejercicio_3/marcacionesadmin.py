@@ -2,6 +2,9 @@ from operator import attrgetter
 from marcacionesadminabstract import MarcacionesAdminAbstract
 from marcacion import Marcacion
 from empleado import Empleado
+from oficina import Oficina
+from marcaciontipo import MarcacionTipo
+import datetime
 
 class Marcacionesadmin(MarcacionesAdminAbstract):
 
@@ -21,26 +24,34 @@ class Marcacionesadmin(MarcacionesAdminAbstract):
         #Crea una lista en la que ningún objeto está repetido y luego la retorna
         empleados_registrados = []
         for marcaciones in self.marcaciones:
-            if marcaciones not in self.marcaciones:
+            if marcaciones not in empleados_registrados:
                 empleados_registrados.append(marcaciones)
         return empleados_registrados
          
     def filtrar_por_empleado(self, empleado: Empleado) -> list:
         """Devuelve todas las marcaciones de un empleado."""
+        marcaciones_empleado = []
         for i in self.marcaciones:
             if i.Empleado == empleado:
-                return i
+                marcaciones_empleado.append(i)
+        return marcaciones_empleado
         
     
     def filtrar_por_tipo(self, tipo: Marcacion) -> list:
+        marcaciones_Portipo = []
         """Devuelve todas las marcaciones del tipo especificado por parámetro."""
         for marcaciones in self.marcaciones:
             if marcaciones.Tipo == tipo.Tipo:
-                return marcaciones    
+                marcaciones_Portipo.append(marcaciones)
+        return marcaciones_Portipo
     
     def llegadas_tarde(self) -> list:
-        """Devuelve las marcaciones realizadas fuera del horario de ingreso."""
-        pass
+        llegada_tarde = []
+        for marcacion in self.marcaciones:
+            if marcacion.Tipo.Entrada.value == "Entrada":
+                if datetime.time(marcacion.FechaHora) > marcacion.Empleado.Oficina.HoraEntrada:
+                    llegada_tarde.append(marcacion)
+        return llegada_tarde
     
     def ordenar_legajo(self) -> None:
         """Ordena las marcaciones por legajo de empleado y luego por fecha/hora."""

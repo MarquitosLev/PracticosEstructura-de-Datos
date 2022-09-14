@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import time, date, datetime
 
 class Oficina:
 
