@@ -4,7 +4,7 @@ from marcacion import Marcacion
 from empleado import Empleado
 from oficina import Oficina
 from marcaciontipo import MarcacionTipo
-import datetime
+from datetime import time, datetime
 
 class Marcacionesadmin(MarcacionesAdminAbstract):
 
@@ -46,21 +46,22 @@ class Marcacionesadmin(MarcacionesAdminAbstract):
         return marcaciones_Portipo
     
     def llegadas_tarde(self) -> list:
+        print("{titulo:*^40}".format(titulo = "Impuntuales"))
         llegada_tarde = []
-        for marcacion in self.marcaciones:
-            if marcacion.Tipo.Entrada.value == "Entrada":
-                if datetime.time(marcacion.FechaHora) > marcacion.Empleado.Oficina.HoraEntrada:
-                    llegada_tarde.append(marcacion)
+        for marc in self.marcaciones:
+            if marc.Tipo == "Entrada":
+                if datetime.time(marc.FechaHora) > marc.Empleado.Oficina.HoraEntrada:
+                    llegada_tarde.append(marc)
         return llegada_tarde
     
     def ordenar_legajo(self) -> None:
         """Ordena las marcaciones por legajo de empleado y luego por fecha/hora."""
         self.marcaciones.sort(key = lambda marcacion: marcacion.Empleado.Legajo)
-        self.marcaciones.sort(key = lambda marcacion: marcacion.FechaHora)
+        #self.marcaciones.sort(key = lambda marcacion: marcacion.FechaHora) #Ordena solo Por FechaHora al finalizar
 
     
     def ordenar_apellido_nombre(self) -> None:
         """Ordena las marcaciones por apellido y nombre del empleado, luego por fecha/hora."""
-        self.marcaciones.sort(key = attrgetter("Apellido", "Nombre"))
+        self.marcaciones.sort(key = attrgetter(Empleado.Nombre, Empleado.Apellido))
         self.marcaciones.sort(key = lambda marcacion: marcacion.FechaHora)
         

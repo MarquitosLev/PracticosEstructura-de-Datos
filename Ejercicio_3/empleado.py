@@ -1,8 +1,9 @@
+from sys import int_info
 from oficina import Oficina
 
 class Empleado:
 
-    def __init__(self, Legajo : str, Documento : int, Apellido : str, Nombre : str, Oficina : Oficina) -> None:
+    def __init__(self, Legajo : int, Documento : int, Apellido : str, Nombre : str, Oficina : Oficina) -> None:
         self.Legajo = Legajo
         self.Documento = Documento
         self.Apellido = Apellido

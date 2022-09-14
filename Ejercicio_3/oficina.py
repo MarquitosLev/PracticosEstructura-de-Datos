@@ -2,7 +2,7 @@ from datetime import time, date, datetime
 
 class Oficina:
 
-    def __init__(self, Nombre : str, HoraEntrada : datetime.time, HoraSalida : datetime.time) -> None:
+    def __init__(self, Nombre : str, HoraEntrada : time, HoraSalida : time) -> None:
         self.Nombre = Nombre
         self.HoraEntrada = HoraEntrada
         self.HoraSalida = HoraSalida
