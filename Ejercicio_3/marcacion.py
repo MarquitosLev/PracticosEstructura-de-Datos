@@ -1,7 +1,6 @@
 from empleado import Empleado
 from marcaciontipo import MarcacionTipo
 from datetime import datetime, time
-import random
 from oficina import Oficina
 
 class Marcacion():
@@ -40,11 +39,13 @@ class Marcacion():
     def NumRegistro(self, valor : int) -> None:
         raise ValueError("No se puede modificar el número de registro.")
             
+#Estas son pruebas que utilicé para saber si todo iba bien. 
 
 ofi1 = Oficina("tukson", time(8,10), time(16,10))
 e1 = Empleado(10, 44624249, "González", "Leandro", ofi1)
 o1 = Marcacion(e1, datetime(2022, 9, 13, 8, 13), MarcacionTipo.Entrada.value)
 print(o1)
+#Estos print a contianuación son los que me tiran errores. Si no, ya estaría terminado
 print(o1.NumeroRegistro)
 print(o1.NumeroRegistro(15))
 
@@ -58,4 +59,5 @@ e3 = Empleado(12, 23456789, "Etchepare", "Sebastián", ofi3)
 o3 = Marcacion(e3, datetime(2022, 9, 13, 8, 15), MarcacionTipo.Entrada.value)
 print(o3)
 
+#Este imprime el último número de registro asignado. FUNCIONA BIEN
 print(Marcacion.ultimo_numRegistro)
