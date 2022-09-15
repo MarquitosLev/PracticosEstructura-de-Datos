@@ -37,7 +37,7 @@ marcacion11 = Marcacion(empleado5, datetime(2021, 11, 12, 20,21),MarcacionTipo.S
 marcacion12 = Marcacion(empleado2, datetime(2017, 10, 19, 22,36),MarcacionTipo.Salida.value)
 marcacion13 = Marcacion(empleado3, datetime(2019, 3, 2, 12, 56),MarcacionTipo.Salida.value)
 marcacion14 = Marcacion(empleado2, datetime(2020, 5, 20, 16, 6), MarcacionTipo.Entrada.value)
-marcacion15 = Marcacion(empleado3, datetime(2022, 1, 9,40 ), MarcacionTipo.Entrada.value)
+marcacion15 = Marcacion(empleado3, datetime(2022, 1, 9, 9, 42), MarcacionTipo.Entrada.value)
 
 admin = Marcacionesadmin()
 
@@ -58,8 +58,8 @@ admin.agregar(marcacion14)
 admin.agregar(marcacion15)
 
 
-
-# admin.ordenar_apellido_nombre() #No funciona el ordenamiento
+admin.ordenar_apellido_nombre()
+print(admin) #No funciona el ordenamiento
 # admin.ordenar_legajo() 
 # print(admin.llegadas_tarde())
 # print(admin.filtrar_por_tipo(marcacion9)) #Mismo caso con filtrar_por_empleado()
