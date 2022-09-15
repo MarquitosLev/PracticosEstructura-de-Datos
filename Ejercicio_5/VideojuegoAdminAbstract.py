@@ -7,6 +7,7 @@ from videojuego import Videojuego
 class VideojuegosAdminAbstract(ABC):
     def __init__(self) -> None:
         self.videojuegos = []
+        
     def __len__(self) -> int:
         # Indica la cantidad de videojuegos registrados.
         # Returns: int: cantidad de elementos almacenados actualmente en videojuegos.
