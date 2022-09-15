@@ -36,8 +36,8 @@ class Marcacion():
         return self.__num_registro
     
     @NumeroRegistro.setter
-    def NumRegistro(self, valor : int) -> None:
-        raise ValueError("No se puede modificar el número de registro.")
+    def NumeroRegistro(self, valor : int):
+        raise Exception("No se puede modificar el número de registro.")
             
 #Estas son pruebas que utilicé para saber si todo iba bien. 
 
@@ -45,9 +45,9 @@ ofi1 = Oficina("tukson", time(8,10), time(16,10))
 e1 = Empleado(10, 44624249, "González", "Leandro", ofi1)
 o1 = Marcacion(e1, datetime(2022, 9, 13, 8, 13), MarcacionTipo.Entrada.value)
 print(o1)
-#Estos print a contianuación son los que me tiran errores. Si no, ya estaría terminado
-print(o1.NumeroRegistro)
-print(o1.NumeroRegistro(15))
+#stos print a contianuación son los que me tiran errores. Si no, ya estaría terminado
+print(f"Numero de registro de o1: {o1.NumeroRegistro}")
+# o1.NumeroRegistro = 15
 
 ofi2 = Oficina("ventas", time(8,00), time(15,30))
 e2 = Empleado(11, 30567894, "Fernández", "Santiago", ofi2)
