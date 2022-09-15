@@ -27,7 +27,7 @@ def filtrar_por_especie(mascotas : list, especie : Especie):
     return("\n" + "*" * 40 + "\n")
 
 def max_mascotero(mascotas : list)-> Persona:
-    print("{titulo:*^40}".format(titulo = "Mascotero"))
+    print("{titulo:*^40}".format(titulo = "Maximo mascotero"))
     max = 0
     pers = Persona
     for i in mascotas:
