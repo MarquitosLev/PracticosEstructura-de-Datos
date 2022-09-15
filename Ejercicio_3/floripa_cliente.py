@@ -37,15 +37,26 @@ marcacion11 = Marcacion(empleado5, datetime(2021, 11, 12, 20,21),MarcacionTipo.S
 marcacion12 = Marcacion(empleado2, datetime(2017, 10, 19, 22,36),MarcacionTipo.Salida.value)
 marcacion13 = Marcacion(empleado3, datetime(2019, 3, 2, 12, 56),MarcacionTipo.Salida.value)
 marcacion14 = Marcacion(empleado2, datetime(2020, 5, 20, 16, 6), MarcacionTipo.Entrada.value)
-marcacion15 = Marcacion(empleado3, datetime(2022, 1, 17, 9, 40), MarcacionTipo.Entrada.value)
+marcacion15 = Marcacion(empleado3, datetime(2022, 1, 9,40 ), MarcacionTipo.Entrada.value)
 
 admin = Marcacionesadmin()
 
 admin.agregar(marcacion1)
-admin.agregar(marcacion9)
-admin.agregar(marcacion9) #Repetido para probar admin.empleados()
-admin.agregar(marcacion3)
+admin.agregar(marcacion2)
+admin.agregar(marcacion3) #Repetido para probar admin.empleados()
+admin.agregar(marcacion4)
+admin.agregar(marcacion5)
+admin.agregar(marcacion6)
 admin.agregar(marcacion7)
+admin.agregar(marcacion8)
+admin.agregar(marcacion9)
+admin.agregar(marcacion10)
+admin.agregar(marcacion11)
+admin.agregar(marcacion12)
+admin.agregar(marcacion13)
+admin.agregar(marcacion14)
+admin.agregar(marcacion15)
+
 
 
 # admin.ordenar_apellido_nombre() #No funciona el ordenamiento
