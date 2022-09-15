@@ -23,9 +23,3 @@ class Videojuego:
     
     def __repr__(self) -> str:
          return self.__str__()
-
-plat = [Plataforma("PS4", False), Plataforma("PC", False)] 
-empD= Empresa("Activision")
-empDis = Empresa("Sledgehammer")
-vj = Videojuego("Call Of Duty", Genero.FPS.value, plat, "Juego de guerras en primera persona", 68.88, empD, empDis, date(2021, 10, 22), 8.5)
-print(vj)
