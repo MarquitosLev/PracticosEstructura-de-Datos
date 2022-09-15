@@ -1,20 +1,24 @@
 from empleado import Empleado
 from marcaciontipo import MarcacionTipo
 from datetime import datetime, time
-import random
 from oficina import Oficina
 
-class Marcacion:
+class Marcacion():
+
+    contador = 1
+    ultimo_numRegistro = 0
 
     def __init__(self,Empleado : Empleado, FechaHora : datetime, Tipo : MarcacionTipo):
-        self.num_registro = random.randint(1, 1000)
+        self.__num_registro = Marcacion.contador
         self.Empleado = Empleado
         self.FechaHora = FechaHora
         self.Tipo = Tipo
-        self.Ultimo_numRegistro = self.num_registro
-    
+
+        Marcacion.ultimo_numRegistro = Marcacion.contador
+        Marcacion.contador = Marcacion.contador + 1;
+
     def __str__(self) -> str:
-        return "* Numero de registro: %s\n* Empleado: %s\n* Fecha-Hora: %s\n* Tipo: %s\n" % (self.num_registro, self.Empleado, self.FechaHora, self.Tipo)
+        return "* Numero de registro: %s\n* Empleado: %s\n* Fecha-Hora: %s\n* Tipo: %s\n" % (self.__num_registro, self.Empleado, self.FechaHora, self.Tipo)
     
     def __repr__(self) -> str:
         return self.__str__()
@@ -26,21 +30,34 @@ class Marcacion:
             return True
         else:
             return False
-    
-    @classmethod
-    def guardar_numero(cls):
-        cls.Ultimo_numRegistro = cls.num_registro
 
     @property
-    def NumRegistro(self):
-        try:
-            return self.num_registro
-        except Exception:
-            print("No se puede modificar el numero de registro")
+    def NumeroRegistro(self) -> int:
+        return self.__num_registro
+    
+    @NumeroRegistro.setter
+    def NumRegistro(self, valor : int) -> None:
+        raise ValueError("No se puede modificar el número de registro.")
             
+#Estas son pruebas que utilicé para saber si todo iba bien. 
 
-# ofi1 = Oficina("tukson", time(8,10), time(16,10))
-# e1 = Empleado("Hola", 44624249, "González", "Leandro", ofi1)
-# o1 = Marcacion(e1, datetime(2022, 9, 13, 22, 13), MarcacionTipo.Entrada.value)
-# print(o1)
+ofi1 = Oficina("tukson", time(8,10), time(16,10))
+e1 = Empleado(10, 44624249, "González", "Leandro", ofi1)
+o1 = Marcacion(e1, datetime(2022, 9, 13, 8, 13), MarcacionTipo.Entrada.value)
+print(o1)
+#Estos print a contianuación son los que me tiran errores. Si no, ya estaría terminado
+print(o1.NumeroRegistro)
+print(o1.NumeroRegistro(15))
 
+ofi2 = Oficina("ventas", time(8,00), time(15,30))
+e2 = Empleado(11, 30567894, "Fernández", "Santiago", ofi2)
+o2 = Marcacion(e2, datetime(2022, 9, 13, 8, 00), MarcacionTipo.Entrada.value)
+print(o2)
+
+ofi3 = Oficina("tukson", time(8,10), time(16,10))
+e3 = Empleado(12, 23456789, "Etchepare", "Sebastián", ofi3)
+o3 = Marcacion(e3, datetime(2022, 9, 13, 8, 15), MarcacionTipo.Entrada.value)
+print(o3)
+
+#Este imprime el último número de registro asignado. FUNCIONA BIEN
+print(Marcacion.ultimo_numRegistro)
