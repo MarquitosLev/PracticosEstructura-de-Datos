@@ -20,5 +20,6 @@ class Mascota:
     def __repr__(self) -> str:
         return self.__str__()
     
+    #
     def calc_edad(self):
         return Mascota.Anio_actual - self.anio_nacimiento

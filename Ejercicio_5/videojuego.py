@@ -14,7 +14,7 @@ class Videojuego:
             self.emp_distribuidora = emp_distribuidora
             self.fecha_lanzamiento = fecha_lanzamiento
             if ranking_metacritic > 10 or ranking_metacritic < 0:
-                raise Exception("Metacritic no admitido")
+                raise ValueError("Metacritic no admitido")
             else:
                 self.ranking_metacritic = ranking_metacritic
 
@@ -23,9 +23,3 @@ class Videojuego:
     
     def __repr__(self) -> str:
          return self.__str__()
-
-plat = [Plataforma("PS4", False), Plataforma("PC", False)] 
-empD= Empresa("Activision")
-empDis = Empresa("Sledgehammer")
-vj = Videojuego("Call Of Duty", Genero.FPS.value, plat, "Juego de guerras en primera persona", 68.88, empD, empDis, date(2021, 10, 22), 8.5)
-print(vj)
