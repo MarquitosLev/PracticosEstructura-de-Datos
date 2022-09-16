@@ -12,10 +12,12 @@ class Libro:
 
     #Retorna cadena con los atributos
     def __str__(self):
-        return "- N° Inventario: %s\n- Título: %s\n- Autor: %s\n- Categoria: %s\n- Anio Publicación: %s" % (self.num_invent, self.titulo, self.autor, self.categoria, self.anio_publi)
+        return "\n- N° Inventario: %s\n- Título: %s\n- Autor: %s\n- Categoria: %s\n- Anio Publicación: %s\n" % (self.num_invent, self.titulo, self.autor, self.categoria, self.anio_publi)
+
+    def __repr__(self) -> str:
+        return self.__str__()
 
     #retorna si 2 objetos de la misma clase son iguales
     def __eq__(self, otro):
-        if self.anio_publi == otro.anio_publi and self.titulo == otro.titulo and self.autor == otro.autor:
-            return True
-        else: return False
+        if isinstance(otro, Libro):
+            return self.anio_publi == otro.anio_publi and self.titulo == otro.titulo and self.autor == otro.autor

@@ -5,9 +5,11 @@ class Autor:
         self.apellido = apellido
     
     def __str__(self) -> str:
-        return "- Nombre: %s\n- Apellido: %s" % (self.nombre, self.apellido)
+        return "- Nombre: %s\n \t - Apellido: %s" % (self.nombre, self.apellido)
+
+    def __repr__(self) -> str:
+        return self.__str__()
     
     def __eq__(self, otro):
-        if self.nombre == otro.nombre and self.apellido == otro.apellido:
-            return True
-        else: return False
+        if isinstance(otro, Autor):
+            return self.nombre == otro.nombre and self.apellido == otro.apellido
