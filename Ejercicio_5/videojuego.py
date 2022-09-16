@@ -19,7 +19,7 @@ class Videojuego:
                 self.ranking_metacritic = ranking_metacritic
 
     def __str__(self) -> str:
-        return "- Titulo: {}\n- Genero: {}\n- Plataformas: {}\n- Descripcion: {}\n- Precio: {}\n- Empresa desarrolladora: {}\n- Empresa distribuidora: {}\n- Fecha de lanzamiento: {}\n- Ranking metacritic {}".format(self.titulo, self.genero, self.plataformas, self.descripcion, self.precio, self.emp_desarrolladora, self.emp_distribuidora, self.fecha_lanzamiento, self.ranking_metacritic) 
+        return "\n* Titulo: {}\n* Genero: {}\n* Plataformas: {}\n* Descripcion: {}\n* Precio: {}\n* Empresa desarrolladora: {}\n* Empresa distribuidora: {}\n* Fecha de lanzamiento: {}\n* Ranking metacritic {}\n".format(self.titulo, self.genero, self.plataformas, self.descripcion, self.precio, self.emp_desarrolladora, self.emp_distribuidora, self.fecha_lanzamiento, self.ranking_metacritic) 
     
     def __repr__(self) -> str:
          return self.__str__()
