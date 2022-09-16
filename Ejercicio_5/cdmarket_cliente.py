@@ -1,3 +1,8 @@
+# INTEGRANTES:
+    # LEANDRO GONZALEZ FISTER
+    # SEBASTIAN ETCHEPARE
+    # MARCOS JOEL LEIVA
+    
 from Empresa import Empresa
 from datetime import date
 from Plataforma import Plataforma

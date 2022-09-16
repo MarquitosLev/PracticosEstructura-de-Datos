@@ -1,3 +1,8 @@
+# INTEGRANTES:
+    # LEANDRO GONZALEZ FISTER
+    # SEBASTIAN ETCHEPARE
+    # MARCOS JOEL LEIVA
+    
 from marcacionesadmin import Marcacionesadmin
 from marcaciontipo import MarcacionTipo
 from empleado import Empleado

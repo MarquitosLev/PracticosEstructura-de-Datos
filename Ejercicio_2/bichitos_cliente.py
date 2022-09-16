@@ -1,3 +1,8 @@
+# INTEGRANTES:
+    # LEANDRO GONZALEZ FISTER
+    # SEBASTIAN ETCHEPARE
+    # MARCOS JOEL LEIVA
+    
 from Especie import Especie
 from Persona import Persona
 from Raza import Raza
