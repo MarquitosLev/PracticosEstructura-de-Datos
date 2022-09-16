@@ -37,13 +37,16 @@ juego7 = Videojuego("Pro Evolution Soccer 2012", Genero.Deportes.value, [Platafo
 emp_desa8 = Empresa("Ubisoft Montreal")
 emp_dis8 = Empresa("Ubisoft")
 juego8 = Videojuego("Assassin's Creed: Valhalla", Genero.Accion_aventuras.value, [Plataforma("PlayStation 4", True), Plataforma("PC", True)], "Ambientado en el siglo IX, el juego tiene lugar durante la invasión de Gran Bretaña por parte de los Vikingos", 7000.0, emp_desa8, emp_dis8, date(2020, 11, 10), 7.5)
-# emp_desa6 = Empresa("Criterion Games")
-# emp_dis6 = Empresa("Electronics Arts")
-# juego6 = Videojuego("Need for Speed Most Wanted", Genero.Carreras.value, [Plataforma("PlayStation", False), Plataforma("PC", False)], "Need for Speed: Most Wanted es un videojuego de carreras de la saga Need for Speed ", 1499.9, emp_desa6, emp_dis6, date(2012, 10, 30), 99.2)
+# emp_desa9 = Empresa("Criterion Games")
+# emp_dis9 = Empresa("Electronics Arts")
+# juego9 = Videojuego("Need for Speed Most Wanted", Genero.Carreras.value, [Plataforma("PlayStation", False), Plataforma("PC", False)], "Need for Speed: Most Wanted es un videojuego de carreras de la saga Need for Speed ", 1499.9, emp_desa6, emp_dis6, date(2012, 10, 30), 99.2)
 
 # QUITAR COMENTARIO PARA EXCEPTION RANKING METACRITIC 
 
 # Agregado a la lista de VideojuegosAdmin
+admin.agregar(juego8)
+admin.agregar(juego7)
+admin.agregar(juego6)
 admin.agregar(juego5)
 admin.agregar(juego3)
 admin.agregar(juego4)
