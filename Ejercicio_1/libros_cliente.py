@@ -1,3 +1,8 @@
+# INTEGRANTES:
+    # LEANDRO GONZALEZ FISTER
+    # SEBASTIAN ETCHEPARE
+    # MARCOS JOEL LEIVA
+    
 from Autor import Autor
 from Categoria import Categoria
 from Libro import Libro
