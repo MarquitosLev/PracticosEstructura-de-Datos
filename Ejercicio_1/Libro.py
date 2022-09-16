@@ -19,6 +19,5 @@ class Libro:
 
     #retorna si 2 objetos de la misma clase son iguales
     def __eq__(self, otro):
-        if self.anio_publi == otro.anio_publi and self.titulo == otro.titulo and self.autor == otro.autor:
-            return True
-        else: return False
+        if isinstance(otro, Libro):
+            return self.anio_publi == otro.anio_publi and self.titulo == otro.titulo and self.autor == otro.autor

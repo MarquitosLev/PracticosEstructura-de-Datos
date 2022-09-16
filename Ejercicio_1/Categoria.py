@@ -10,4 +10,5 @@ class Categoria:
         return self.__str__()
         
     def __eq__(self, otro):
-        return self.nombre == otro.nombre
+        if isinstance(otro, Categoria):
+            return self.nombre == otro.nombre
