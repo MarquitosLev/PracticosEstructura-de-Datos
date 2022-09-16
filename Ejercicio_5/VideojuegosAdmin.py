@@ -14,13 +14,15 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
     
     def __str__(self) -> str:
         """Concatena en un str todos los videojuegos del catálogo."""
+        print("\n" + "*" * 40 + "\n")
         cadena = ""
         for game in self.videojuegos:
             cadena += f"| {game.titulo} |"
         return cadena
         
     def filtrar_por_desarrolladora(self, desarrolladora: Empresa) -> list:
-        """Devuelve los videojuegos desarrollados por la empresa pasada por parámetro.""" 
+        """Devuelve los videojuegos desarrollados por la empresa pasada por parámetro."""
+        print("\n" + "*" * 40 + "\n") 
         desarrolladores = [] 
         for des in self.videojuegos:
             if desarrolladora == des.emp_desarrolladora:
@@ -29,6 +31,7 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
 
     def filtrar_por_distribuidora(self, distribuidora: Empresa) -> list:
         """Devuelve los videojuegos distribuídos por la empresa pasada por parámetro."""
+        print("\n" + "*" * 40 + "\n")
         distri = []
         for dis in self.videojuegos:
             if distribuidora == dis.emp_distribuidora:
@@ -36,7 +39,8 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
         return(distri)
 
     def filtrar_por_genero(self, genero: Genero) -> list:
-        """Devuelve los videojuegos del género pasado por parámetro. """  
+        """Devuelve los videojuegos del género pasado por parámetro. """
+        print("\n" + "*" * 40 + "\n")   
         gender = []
         for gen in self.videojuegos:
             if genero == gen.genero:

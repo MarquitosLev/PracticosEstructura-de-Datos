@@ -63,7 +63,9 @@ print(admin)
 admin.ordenar_legajo()
 print(admin)
 print(admin.llegadas_tarde())
-print(admin.filtrar_por_tipo(marcacion9)) #Mismo caso con filtrar_por_empleado()
+print("\n" + "*" * 40 + "\n")
+print(admin.filtrar_por_tipo(marcacion9)) #Filtra las marcaciones de tipo entrada o salida
+print("\n" + "*" * 40 + "\n")
 print(admin.filtrar_por_empleado(empleado4)) #Salen repetidos en caso de que haya repetidos
+print("\n" + "*" * 40 + "\n")
 print(admin.empleados())
-print(admin)
