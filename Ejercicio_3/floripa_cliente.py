@@ -23,13 +23,13 @@ oficina5 = Oficina("Contable", time(15,15), time(20, 15))
 empleado5 = Empleado(710, 40134511, "Boggia", "Tomas", oficina5)
 
 #Me olvide agregar la hora en datetime
-marcacion1 = Marcacion(empleado1, datetime(2021, 6, 15, 9, 10), MarcacionTipo.Entrada.value)
+marcacion1 = Marcacion(empleado1, datetime(2021, 6, 15, 8, 28), MarcacionTipo.Entrada.value)
 marcacion2 = Marcacion(empleado2, datetime(2021, 8, 30, 16, 5), MarcacionTipo.Entrada.value)
 marcacion3 = Marcacion(empleado3, datetime(2021, 1, 29, 12, 53), MarcacionTipo.Salida.value)
-marcacion4 = Marcacion(empleado4, datetime(2020, 7, 25, 9, 48), MarcacionTipo.Entrada.value)
+marcacion4 = Marcacion(empleado4, datetime(2020, 7, 25, 9, 14), MarcacionTipo.Entrada.value)
 marcacion5 = Marcacion(empleado5, datetime(2020, 3, 1, 20, 20), MarcacionTipo.Salida.value)
 marcacion6 = Marcacion(empleado4, datetime(2021, 9, 22, 8, 49),MarcacionTipo.Entrada.value)
-marcacion7 = Marcacion(empleado2, datetime(2018, 3, 19, 16,15),MarcacionTipo.Entrada.value)
+marcacion7 = Marcacion(empleado2, datetime(2018, 3, 19, 16, 15),MarcacionTipo.Entrada.value)
 marcacion8 = Marcacion(empleado1, datetime(2020, 6, 14, 15, 10),MarcacionTipo.Salida.value)
 marcacion9 = Marcacion(empleado3, datetime(2015, 5, 20, 12, 30),MarcacionTipo.Salida.value)
 marcacion10 = Marcacion(empleado5, datetime(2018, 2, 28, 15,5), MarcacionTipo.Entrada.value)
@@ -58,11 +58,10 @@ admin.agregar(marcacion14)
 admin.agregar(marcacion15)
 
 
-admin.ordenar_apellido_nombre()
-print(admin) #No funciona el ordenamiento
-# admin.ordenar_legajo() 
+# admin.ordenar_apellido_nombre() #Ya anda
+# admin.ordenar_legajo() #Ya anda
 # print(admin.llegadas_tarde())
 # print(admin.filtrar_por_tipo(marcacion9)) #Mismo caso con filtrar_por_empleado()
-# print(admin.filtrar_por_empleado(empleado3)) #Salen repetidos en caso de que haya repetidos
-# print(admin.empleados())
-# print(admin)
+# print(admin.filtrar_por_empleado(empleado4)) #Salen repetidos en caso de que haya repetidos
+print(admin.empleados())
+#print(admin)

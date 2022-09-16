@@ -26,7 +26,7 @@ class Marcacion():
     #En este caso sería verificar que se trate del mismo empleado o de la misma marcación? 
 
     def __eq__(self, otro : object) -> bool:
-        if self.num_registro == otro.num_registro and self.Empleado == otro.Empleado:
+        if self.__num_registro == otro.__num_registro and self.Empleado == otro.Empleado:
             return True
         else:
             return False
