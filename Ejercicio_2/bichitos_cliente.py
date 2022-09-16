@@ -6,8 +6,8 @@ from Mascota import Mascota
 def imprimir(mascotas : list)-> None:
     print("{titulo:*^40}".format(titulo = "Lista"))
     for i in mascotas: 
-        print("\n" + "*" * 40 + "\n")
         print(i)
+        print("\n" + "*" * 40 + "\n")
     return ""
 
 def filtrar_gerontes(mascotas : list)-> list: #Retorna una lista
@@ -22,7 +22,6 @@ def filtrar_por_especie(mascotas : list, especie : Especie):
     print("{titulo:*^40}".format(titulo = "Lista por especie"))
     for i in mascotas:
         if i.raza.especie == especie:
-            print("\n" + "*" * 40 + "\n")
             print(i)
     return("\n" + "*" * 40 + "\n")
 
@@ -69,5 +68,5 @@ lista = [mascota1, mascota2, mascota3, mascota4, mascota5]
 
 print(imprimir(lista))
 print(filtrar_gerontes(lista))
-print(filtrar_por_especie(lista, especie3))
+print(filtrar_por_especie(lista, Especie("Perro")))
 print(max_mascotero(lista))
