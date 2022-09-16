@@ -21,6 +21,7 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
         
     def filtrar_por_desarrolladora(self, desarrolladora: Empresa) -> list:
         """Devuelve los videojuegos desarrollados por la empresa pasada por parámetro.""" 
+        print("\n{titulo:*^80}\n".format(titulo = "Juegos por Desarrolladora"))
         desarrolladores = [] 
         for des in self.videojuegos:
             if desarrolladora == des.emp_desarrolladora:
@@ -29,6 +30,7 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
 
     def filtrar_por_distribuidora(self, distribuidora: Empresa) -> list:
         """Devuelve los videojuegos distribuídos por la empresa pasada por parámetro."""
+        print("\n{titulo:*^80}\n".format(titulo = "Juegos por Distribuidora"))
         distri = []
         for dis in self.videojuegos:
             if distribuidora == dis.emp_distribuidora:
@@ -37,6 +39,7 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
 
     def filtrar_por_genero(self, genero: Genero) -> list:
         """Devuelve los videojuegos del género pasado por parámetro. """  
+        print("\n{titulo:*^80}\n".format(titulo = "Juegos por Titulo"))
         gender = []
         for gen in self.videojuegos:
             if genero == gen.genero:
@@ -45,6 +48,7 @@ class VideojuegosAdmin(VideojuegosAdminAbstract):
      
     def cantidad_por_plataforma(self) -> list:
         """Indica la cantidad de videojuegos por plataforma. """  
+        print("\n{titulo:*^80}\n".format(titulo = "Cantidad por Plataforma"))
         lista = []
         dicc = {"PlayStation": 0, "Xbox": 0, "PC": 0, "Nintendo": 0}
         for i in self.videojuegos:
