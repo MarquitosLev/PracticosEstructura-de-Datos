@@ -15,21 +15,17 @@ class Marcacion():
         self.Tipo = Tipo
 
         Marcacion.ultimo_numRegistro = Marcacion.contador
-        Marcacion.contador = Marcacion.contador + 1;
+        Marcacion.contador = Marcacion.contador + 1
 
     def __str__(self) -> str:
         return "* Numero de registro: %s\n* Empleado: %s\n* Fecha-Hora: %s\n* Tipo: %s\n" % (self.__num_registro, self.Empleado, self.FechaHora, self.Tipo)
     
     def __repr__(self) -> str:
-        return self.__str__()
-
-    #En este caso sería verificar que se trate del mismo empleado o de la misma marcación? 
+        return self.__str__() 
 
     def __eq__(self, otro : object) -> bool:
-        if self.__num_registro == otro.__num_registro and self.Empleado == otro.Empleado:
-            return True
-        else:
-            return False
+        if isinstance(otro, Empleado):
+            return self.Empleado == otro.Empleado and self.__num_registro == otro.__num_registro
 
     @property
     def NumeroRegistro(self) -> int:
@@ -37,5 +33,4 @@ class Marcacion():
     
     @NumeroRegistro.setter
     def NumeroRegistro(self, valor : int):
-        raise Exception("No se puede modificar el número de registro.")
-            
+        raise Exception("No se puede modificar el número de registro.")      

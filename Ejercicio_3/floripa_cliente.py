@@ -58,10 +58,12 @@ admin.agregar(marcacion14)
 admin.agregar(marcacion15)
 
 
-admin.ordenar_apellido_nombre() #Ya anda
-# admin.ordenar_legajo() #Ya anda
-# print(admin.llegadas_tarde())
-# print(admin.filtrar_por_tipo(marcacion9)) #Mismo caso con filtrar_por_empleado()
-# print(admin.filtrar_por_empleado(empleado4)) #Salen repetidos en caso de que haya repetidos
-# print(admin.empleados())
-# print(admin)
+admin.ordenar_apellido_nombre()
+print(admin)
+admin.ordenar_legajo()
+print(admin)
+print(admin.llegadas_tarde())
+print(admin.filtrar_por_tipo(marcacion9)) #Mismo caso con filtrar_por_empleado()
+print(admin.filtrar_por_empleado(empleado4)) #Salen repetidos en caso de que haya repetidos
+print(admin.empleados())
+print(admin)

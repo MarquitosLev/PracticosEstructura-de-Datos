@@ -58,13 +58,9 @@ class Marcacionesadmin(MarcacionesAdminAbstract):
         """Ordena las marcaciones por legajo de empleado y luego por fecha/hora."""
         self.marcaciones.sort(key = lambda marcacion: marcacion.FechaHora)
         self.marcaciones.sort(key = lambda marcacion: marcacion.Empleado.Legajo)
-        #self.marcaciones.sort(key = lambda marcacion: marcacion.FechaHora) #Ordena solo Por FechaHora al finalizar
-
     
     def ordenar_apellido_nombre(self) -> None:
         """Ordena las marcaciones por apellido y nombre del empleado, luego por fecha/hora."""
-        #self.marcaciones.sort(key = lambda marcacion: marcacion.FechaHora)
-        #self.marcaciones.sort(key = lambda nombre: nombre.Empleado.Nombre)
-        self.marcaciones.sort(key = lambda clave: clave.FechaHora) #and clave.Empleado.Nombre and clave.Empleado.Apellido)
+        self.marcaciones.sort(key = lambda clave: clave.FechaHora) 
         self.marcaciones.sort(key = lambda clave: clave.Empleado.Nombre and clave.Empleado.Apellido)
         
