@@ -1,9 +1,9 @@
-from ast import Raise
 from LinkedStack import LinkedStack
 from LinkedStackExtAbstract import LinkedStackExtAbstract
+from ArrayStack import ArrayStack
 from typing import Any, List
 
-class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
+class LinkedStackExt(LinkedStackExtAbstract, ArrayStack):
 
     def multi_pop(self, num: int) -> List[Any]:
         """Realiza la cantidad de operaciones pop() indicada por num.
@@ -38,17 +38,26 @@ class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
         Raises:
         Exception: Arroja excepción si la estructura está vacía.
         """
-        pass
+        if not self.is_empty():
+            self._data[self._data.index(self.top())] = self._data[0]
+        else:
+            raise Exception("Pila vacia. No se puede intercambiar.")
 
 
-#Prueba de metodo multipop, quitar despues
+#Creacion de pila e ingreso de elementos a la pila
 pila = LinkedStackExt()
 pila.push(12)
 pila.push("Hola")
 pila.push(99)
 pila.push(12.5)
+
+#Prueba de metodo multipop, quitar despues
 pila.push("Tope")
 print(pila)
-print(pila.multi_pop(5))
+
+#Prueba metodo exchange
+pila.exchange()
 print(pila)
+
+
 
