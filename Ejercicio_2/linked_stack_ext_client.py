@@ -1,12 +1,25 @@
 from LinkedStackExt import LinkedStackExt
 from LinkedStack import LinkedStack
 
-cliente = LinkedStack()
+#Creacion de pila e ingreso de elementos a la pila
+pila = LinkedStackExt()
+pila.push("Primer ingresado")
+pila.push("Hola")
+pila.push(99)
+pila.push(12.5)
+pila.push("Marcos")
+pila.push("Gosti")
+pila.push("Ricardo")
+pila.push("Santu")
+pila.push(666)
+pila.push("Tope")
+print(pila)
 
-cliente.push(4)
-cliente.push(6)
-cliente.push(66)
-cliente.push("Hola")
-print(cliente)
+#Prueba de metodo multipop, quitar despues
+print("Elementos Eliminados: ", pila.multi_pop(5))
+print(pila)
 
+#Prueba metodo exchange
+pila.exchange()
+print(pila)
 
