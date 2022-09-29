@@ -1,9 +1,10 @@
+from ctypes import Union
+from socket import AI_NUMERICHOST
 from LinkedStack import LinkedStack
 from LinkedStackExtAbstract import LinkedStackExtAbstract
-from ArrayStack import ArrayStack
 from typing import Any, List
 
-class LinkedStackExt(LinkedStackExtAbstract, ArrayStack):
+class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
 
     def multi_pop(self, num: int) -> List[Any]:
         """Realiza la cantidad de operaciones pop() indicada por num.
@@ -38,26 +39,17 @@ class LinkedStackExt(LinkedStackExtAbstract, ArrayStack):
         Raises:
         Exception: Arroja excepción si la estructura está vacía.
         """
+        #Obtencion del ultimo elemento de la pila
+        actual = self._head
+        while actual:
+            actual = actual.next
+            if actual.next == None:
+                actual = actual.element
+                break
+            
         if not self.is_empty():
-            self._data[self._data.index(self.top())] = self._data[0]
+            #Intercambio del tope con lo obtenido del primer elemento ingresado
+            self._head.element = actual
+            pass
         else:
             raise Exception("Pila vacia. No se puede intercambiar.")
-
-
-#Creacion de pila e ingreso de elementos a la pila
-pila = LinkedStackExt()
-pila.push(12)
-pila.push("Hola")
-pila.push(99)
-pila.push(12.5)
-
-#Prueba de metodo multipop, quitar despues
-pila.push("Tope")
-print(pila)
-
-#Prueba metodo exchange
-pila.exchange()
-print(pila)
-
-
-
