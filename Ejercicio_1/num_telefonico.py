@@ -1,6 +1,10 @@
-import re
+#N1 = "(0345) 154123456" 
+#N2 = "+5493454123456" 
+#N3 = "3454123456" 
+#N4 = "+54011123456" 
+#N5 = "34564123456" 
 
-#Ni idea que hice aca kpos
-patron = "([\\(\\]0345|345[\\)\\])\s([0-9]{16})" 
-print("Patron: ",patron)
-print(re.findall(patron, "(0345) 154682374"))
+Num = input("Ingrese su número de teléfono: ")
+NValidos = ("(0345) 154", "+5493454", "3454")
+Aux = Num.startswith(NValidos, 0, len(Num))
+print (Aux)
