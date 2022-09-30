@@ -32,7 +32,12 @@ class LinkedStackExt(LinkedStackExtAbstract, LinkedStack):
         param1 (Any): Valor a buscar/reemplazar.
         param2 (Any): Nuevo valor.
         """
-        pass
+        actual = self._head
+        while actual:
+            if actual.element == param1:
+                actual.element = param2
+                break
+            actual = actual.next
 
     def exchange(self) -> None:
         """Intercambia el elemento ubicado en el tope con el más antigüo o último.
