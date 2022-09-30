@@ -1,21 +1,33 @@
 from deque import Deque
 
-col = Deque()
-col.add_last(12)
-col.add_last("Hola")
-col.add_last("First")
-col.add_last(10)
-print(col)
+client = Deque()
 
-col.delete_last()
-print(col)
-print(col._size)
+#Agregados a lo ultimo
+client.add_last(12)
+client.add_last("Hogwarts")
+client.add_last("last")
 
-col.delete_first()
-print(col)
-print(col._size)
+#Agregados al principio
+client.add_first(666)
+client.add_first(422)
+client.add_first("first")
+print(client)
 
-col.add_first("Hola")
-col.add_first("Puto")
-print(col)
-print(col._size)
+#Eliminacion del ultimo elemento
+print("\nEliminacion del ultimo elemento")
+client.delete_last()
+print(client)
+
+#Eliminacion del primer elemento
+print("\nEliminacion del primer elemento e imprime tamaño")
+client.delete_first()
+print(client)
+
+#Impresion del primer elemento
+print("\nPrimer ELemento: ", client.first())
+
+#Impresion del ultimo elemento
+print("\nPrimer ELemento: ", client.last())
+
+#Impresion del tamaño del deque
+print(len(client))

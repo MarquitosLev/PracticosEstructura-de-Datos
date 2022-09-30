@@ -35,14 +35,14 @@ class Deque(DequeAbstract):
         if self.is_empty():
             raise Exception("No se puede retornar ya que la cola está vacía")
         
-        return self.first.element
+        return self._front.element
 
     def last(self) -> Any:
 
         if self.is_empty():
             raise Exception("No se puede returnar ya que la cola está vacía")
 
-        return self.back.element
+        return self._back.element
     
     def add_first(self, element: Any) -> None:
 
