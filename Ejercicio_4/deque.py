@@ -14,7 +14,7 @@ class Deque(DequeAbstract):
         return self._size
     
     def __str__(self) -> str:
-        if self.isEmpty():
+        if self.is_empty():
             return "Deque()"
         
         concatenacion = ""
@@ -23,6 +23,8 @@ class Deque(DequeAbstract):
         while frente != None:
             concatenacion += str(frente.element) + ", "
             frente = frente.next
+
+        concatenacion = concatenacion[:len(concatenacion)-2]
         
         return f"LinkedDeque({concatenacion})"
     
@@ -30,14 +32,14 @@ class Deque(DequeAbstract):
         return self._size == 0
     
     def first(self) -> Any:
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("No se puede retornar ya que la cola está vacía")
         
         return self.first.element
 
     def last(self) -> Any:
 
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("No se puede returnar ya que la cola está vacía")
 
         return self.back.element
@@ -45,20 +47,18 @@ class Deque(DequeAbstract):
     def add_first(self, element: Any) -> None:
 
         nuevo_nodo = ListNode(element, None)
-        if self.isEmpty():
+        if self.is_empty():
             self._front = nuevo_nodo
             self._back = nuevo_nodo
         else:
-            ultimo = self._back
-            self._back = nuevo_nodo
-            self._front.next = self._front
-            self._front = self._back
-            self._back = ultimo
+            nuevo_nodo.next = self._front
+            self._front.prev = nuevo_nodo
+            self._front = nuevo_nodo
         
         self._size += 1
 
     def delete_first(self) -> None:
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("Doble cola vacía")
         else:
             self._front = self._front.next
@@ -68,7 +68,7 @@ class Deque(DequeAbstract):
         
         nuevo_nodo = ListNode(element, None)
 
-        if self.isEmpty():
+        if self.is_empty():
             self._front = nuevo_nodo
             self._back = nuevo_nodo
         else:
@@ -78,14 +78,20 @@ class Deque(DequeAbstract):
         self._size += 1
     
     def delete_last(self) -> None:
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("Doble cola vacía")
         else:
-            elem = self._front
-            while elem:
-                if elem.next == self._back:
-                    self._back = elem
-                    self._size -= 1
-                    break
-                else:
-                    elem = elem.next
+            temp = self._back.element
+            act = self._front
+            prev = None
+            while act and act.element != temp:
+                prev = act
+                act = act.next
+            if prev is None:
+                self.head = act.next
+            elif act:
+                prev.next = act.next
+                act.next = None
+        
+        self._size -= 1
+
