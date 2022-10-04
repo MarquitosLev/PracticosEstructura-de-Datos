@@ -1,17 +1,13 @@
 import re 
 def comprobar_num(N):
-    patron = ("^\\(0345\\) 154", "^5493", "^3454")
-    for i in (0, 2):
+    patron = ["^\\(0345\\) 154", "^\\+5493454", "^3454"]
+    for i in range (3):
         if (re.findall(patron[i], N) != []):
             return True
     return False
 
-#patron = "([\\(\\]0345|345[\\)\\])\s([0-9]{16})" 
-#print("Patron: ",patron)
-#print(re.findall(patron, "(0345) 154682374"))
-
 N1 = "(0345) 154123456" 
-N2 = "5493454123456" 
+N2 = "+5493454123456" 
 N3 = "3454123456" 
 N4 = "+54011123456" 
 N5 = "34564123456" 
