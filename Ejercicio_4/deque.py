@@ -52,7 +52,6 @@ class Deque(DequeAbstract):
             self._back = nuevo_nodo
         else:
             nuevo_nodo.next = self._front
-            self._front.prev = nuevo_nodo
             self._front = nuevo_nodo
         
         self._size += 1
@@ -81,17 +80,14 @@ class Deque(DequeAbstract):
         if self.is_empty():
             raise Exception("Doble cola vacía")
         else:
-            temp = self._back.element
-            act = self._front
-            prev = None
-            while act and act.element != temp:
-                prev = act
-                act = act.next
-            if prev is None:
-                self.head = act.next
-            elif act:
-                prev.next = act.next
-                act.next = None
-        
-        self._size -= 1
-
+            contador = self._front
+            auxiliar = None
+            while contador != None:
+                auxiliar = contador
+                contador = contador.next
+                if contador.next == None:
+                    auxiliar.next = contador.next
+                    break
+            self._back = auxiliar
+            self._size -= 1
+            del contador

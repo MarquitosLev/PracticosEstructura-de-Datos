@@ -11,23 +11,23 @@ client.add_last("last")
 client.add_first(666)
 client.add_first(422)
 client.add_first("first")
-print(client)
+print("\n", client)
 
 #Eliminacion del ultimo elemento
-print("\nEliminacion del ultimo elemento")
+print("\nEliminacion del ultimo elemento:")
 client.delete_last()
 print(client)
 
 #Eliminacion del primer elemento
-print("\nEliminacion del primer elemento e imprime tamaño")
+print("\nEliminacion del primer elemento:")
 client.delete_first()
 print(client)
 
 #Impresion del primer elemento
-print("\nPrimer ELemento: ", client.first())
+print("\nPrimer eLemento actual: ", client.first())
 
 #Impresion del ultimo elemento
-print("\nPrimer ELemento: ", client.last())
+print("\nÚltimo eLemento actual: ", client.last())
 
 #Impresion del tamaño del deque
-print(len(client))
+print("\nTamaño final de la estructura: ", len(client), "\n")
