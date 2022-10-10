@@ -19,6 +19,16 @@ class DoubleLinkedListAbstract(ABC):
         Returns:Any: Devuelve el valor ubicado en la posición indicada por key."""
 
         pass
+    
+    @abstractmethod
+    def __setitem__(self, key: int, value: Any) -> None:
+        """En la posición indicada por key se va a colocar value.
+        Args: key (int): posición que se va a actualizar.                        
+        value (Any): nuevo valor que se va a colocar.                                        
+        Raises:                        
+        Exception: Arroja excepción si el índice está fuera de rango.                
+        """                
+        pass
 
     @abstractmethod        
     def __delitem__(self, key: int) -> None:
