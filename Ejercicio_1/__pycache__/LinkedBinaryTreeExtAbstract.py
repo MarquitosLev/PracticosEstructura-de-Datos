@@ -5,6 +5,7 @@ from data_structures.trees import BinaryTreeNode
 class LinkedBinaryTreeExtAbstract(ABC):
     """ Conjunto de métodos adicionales a LinkedBinaryTree"""
 
+    @abstractmethod
     def hermanos(self, nodo1 : BinaryTreeNode, nodo2: BinaryTreeNode) -> bool:
         """ Indica si node1 y node2 son hermanos.
         Args:
@@ -15,6 +16,7 @@ class LinkedBinaryTreeExtAbstract(ABC):
         """
         pass
 
+    @abstractmethod
     def hojas(self) -> List[Any]:
         """ Devuelve los elementos de los nodos que no tienen ningún hijo.
         Returns:
@@ -22,6 +24,7 @@ class LinkedBinaryTreeExtAbstract(ABC):
         """
         pass
 
+    @abstractmethod
     def internos(self) -> List[Any]:
         """ Devuelve los elementos de los nodos que tienen padre y algún hijo.
         Returns:
@@ -29,6 +32,7 @@ class LinkedBinaryTreeExtAbstract(ABC):
         """
         pass
 
+    @abstractmethod
     def profundidad(self, nodo : BinaryTreeNode) -> int:
         """ Devuelve la longitud del camino entre la raíz y un nodo.
         Args:
@@ -38,6 +42,7 @@ class LinkedBinaryTreeExtAbstract(ABC):
         """
         pass
 
+    @abstractmethod
     def altura(self, nodo : BinaryTreeNode) -> int:
         """ Retorna la longitud del camino entre nodo y la hoja más lejana.
         Args:
