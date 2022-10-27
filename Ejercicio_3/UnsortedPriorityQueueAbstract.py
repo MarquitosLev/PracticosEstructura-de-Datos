@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Any, Tuple
-class UnsortedPriorityQueueAbstract(ABC):
 
+class UnsortedPriorityQueueAbstract(ABC):
+    
     """Cola de prioridad mínima no ordenada utilzando representación posicional."""
     @abstractmethod
     def __len__(self) -> int:
@@ -17,7 +18,7 @@ class UnsortedPriorityQueueAbstract(ABC):
         Returns:
         bool: True si está vacía. False en caso contrario.
         """
-    pass
+        pass
 
     @abstractmethod
     def add(self, k: Any, v: Any) -> None:
@@ -27,6 +28,7 @@ class UnsortedPriorityQueueAbstract(ABC):
         v (Any): Valor del ítem.
         """
         pass
+
     @abstractmethod
     def min(self) -> Tuple[Any]:
         """ Devuelve una tupla conformada por la clave y valor del ítem con menor valor de
@@ -47,4 +49,3 @@ class UnsortedPriorityQueueAbstract(ABC):
         Tuple[Any]: Tupla de dos elementos: Clave y Valor del ítem.
         """
         pass
-
