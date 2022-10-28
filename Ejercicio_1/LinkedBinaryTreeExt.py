@@ -101,6 +101,9 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
             Returns:                        
                 int: devuelve el número de arcos entre la raíz y nodo. 0 si nodo es la raíz.
         """
+        if(nodo == self.root):
+            return 0
+
         pass
     
     def altura(self, nodo: BinaryTreeNode) -> int:
@@ -111,31 +114,15 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
                 int:Devuelve 0 en caso que nodo sea hoja, caso contrario, 
                     la cantidad de arcos entre nodo y la hoja más lejana
         """
+        # Si la cantidad de hijos del nodo es 0, return 0
+        if self.is_empty():
+            raise Exception("Arbol vacío")
+
         if(nodo.children_count() == 0):
-            return 0
-       
-        lista = []
-        queue = LinkedQueue()
-        queue.enqueue(self._root)
-        lista.append(self._root.element)
-        # Agregado del arbol a una lista
-        while queue._front is not None:
-            if(queue._back is not None):
-                if(queue._front.element.left_child is not None):
-                    queue.enqueue(queue._front.element.left_child)
-                    lista.append(queue._front.element.left_child.element)
+            return 0        
 
-                    if(queue._front.element.right_child is not None):
-                        queue.enqueue(queue._front.element.right_child)
-                        lista.append(queue._front.element.right_child.element)
-
-                    queue.dequeue()
-                else:
-                    queue.dequeue()
-        
-        
-        print(lista)
-        pass
+        # Recorre recursivamente, saca la mayor altura de toda la iteracion
+        return max(self.altura(nodo.left_child), self.altura(nodo.right_child)) + 1
 
 nodo_a = BinaryTreeNode('A')
 nodo_b = BinaryTreeNode('B')
@@ -177,4 +164,8 @@ print(arbol.internos())
 print("\n")
 
 print("***ALTURA DE UN NODO***")
-print(arbol.altura(nodo_n))
+print(arbol.altura(nodo_a))
+print("\n")
+
+print("***PROFUNDIDAD DE UN NODO***")
+print(arbol.profundidad(nodo_b))
