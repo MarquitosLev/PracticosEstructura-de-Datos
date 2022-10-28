@@ -1,6 +1,6 @@
 from typing import Any, List
 from LinkedBinaryTreeExtAbstract import LinkedBinaryTreeExtAbstract
-from data_structures.trees import BinaryTreeNode, LinkedBinaryTree
+from data_structures import BinaryTreeNode, LinkedBinaryTree
 from data_structures import LinkedQueue
 
 class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
@@ -19,7 +19,6 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
                 queue.enqueue(queue._front.element.left_child)
 
                 if(queue._front.element.left_child == nodo1 or queue._front.element.left_child == nodo2):
-                    print(queue._front.element.element)
                     padre1 = queue._front.element.element
 
                 if(queue._front.element.right_child is not None):
@@ -97,14 +96,46 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
                  
     def profundidad(self, nodo: BinaryTreeNode) -> int:
         """ Devuelve la longitud del camino entre la raíz y un nodo.
-                Args:                        nodo (BinaryTreeNode): nodo del que se quiere conocer la profundidad.
-                Returns:                        int: devuelve el número de arcos entre la raíz y nodo. 0 si nodo es la raíz.                ""
+            Args:                       
+                nodo (BinaryTreeNode): nodo del que se quiere conocer la profundidad.
+            Returns:                        
+                int: devuelve el número de arcos entre la raíz y nodo. 0 si nodo es la raíz.
         """
         pass
     
     def altura(self, nodo: BinaryTreeNode) -> int:
-        return super().altura(nodo)
+        """Retorna la longitud del camino entre nodo y la hoja más lejana.
+            Args:                        
+                nodo (BinaryTreeNode): nodo del que se quiere conocer la altura.
+            Returns:                        
+                int:Devuelve 0 en caso que nodo sea hoja, caso contrario, 
+                    la cantidad de arcos entre nodo y la hoja más lejana
+        """
+        if(nodo.children_count() == 0):
+            return 0
+       
+        lista = []
+        queue = LinkedQueue()
+        queue.enqueue(self._root)
+        lista.append(self._root.element)
+        # Agregado del arbol a una lista
+        while queue._front is not None:
+            if(queue._back is not None):
+                if(queue._front.element.left_child is not None):
+                    queue.enqueue(queue._front.element.left_child)
+                    lista.append(queue._front.element.left_child.element)
 
+                    if(queue._front.element.right_child is not None):
+                        queue.enqueue(queue._front.element.right_child)
+                        lista.append(queue._front.element.right_child.element)
+
+                    queue.dequeue()
+                else:
+                    queue.dequeue()
+        
+        
+        print(lista)
+        pass
 
 nodo_a = BinaryTreeNode('A')
 nodo_b = BinaryTreeNode('B')
@@ -130,15 +161,20 @@ arbol.add_left_child(nodo_g, nodo_h)
 arbol.add_right_child(nodo_g, nodo_i)
 arbol.add_left_child(nodo_k, nodo_m)
 arbol.add_right_child(nodo_k, nodo_n)
+print(arbol)
+print("\n")
 
 print("***NODOS HERMANOS***")
-print(arbol.hermanos(nodo_f, nodo_k))
-# print(arbol._search_parent(nodo_f))
+print(arbol.hermanos(nodo_c, nodo_d))
+print("\n")
 
-# print("***HOJAS DEL ARBOL***")
-# print(arbol.hojas())
-# print("\n")
-# print("***NODOS INTERNOS***")
-# print(arbol.internos())
+print("***HOJAS DEL ARBOL***")
+print(arbol.hojas())
+print("\n")
 
-# print(arbol)
+print("***NODOS INTERNOS***")
+print(arbol.internos())
+print("\n")
+
+print("***ALTURA DE UN NODO***")
+print(arbol.altura(nodo_n))
