@@ -1,7 +1,15 @@
 from Priority_queue_stack import PriorityQueueStack
 
-PriorityQueueStack.push(2, 2)
-PriorityQueueStack.push(4)
-PriorityQueueStack.push(1)
-PriorityQueueStack.push(7)
-PriorityQueueStack.push(10)
+ColaPrioridadPila = PriorityQueueStack()
+
+ColaPrioridadPila.push(value=10)
+ColaPrioridadPila.push(value=6)
+ColaPrioridadPila.push(value=1)
+ColaPrioridadPila.push(value=9)
+ColaPrioridadPila.push(value=2)
+
+print(ColaPrioridadPila.top())
+print(ColaPrioridadPila.Pop())
+print(ColaPrioridadPila.Pop())
+print(ColaPrioridadPila.Pop())
+print(ColaPrioridadPila.Pop())
