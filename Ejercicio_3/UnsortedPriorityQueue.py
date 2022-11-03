@@ -1,4 +1,4 @@
-from unsortedPriorityQueueAbstract import UnsortedPriorityQueueAbstract
+from UnsortedPriorityQueueAbstract import UnsortedPriorityQueueAbstract
 
 class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
     
@@ -35,6 +35,10 @@ class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
         Returns:
         Tuple[Any]: Tupla de dos elementos: Clave y Valor del ítem.
         """
+
+        if(self.is_empty()):
+            raise Exception("La cola se encuentra vacía")
+
         menor_tupla = ()
         aux = 0
 
@@ -69,6 +73,9 @@ menores
 
         """Se asigna la menor tupla encontrada en la lista 'self.prioridades' a la variable 'menor_tupla', despues,
         Con ayuda del index(), se obtiene la posición de ésta dentro de la lista, y se la elimina con el pop()"""
+
+        if(self.is_empty()):
+            raise Exception("La cola se encuentra vacía")
 
         menor_tupla = self.min()
         self.prioridades.pop(self.prioridades.index(menor_tupla))
