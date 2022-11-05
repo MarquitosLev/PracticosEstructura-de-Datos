@@ -9,11 +9,11 @@ ColaPrioridadPila.Push(value=9)
 ColaPrioridadPila.Push(value=2)
 
 print(ColaPrioridadPila.Top())
-print("*********")
+print("**********************")
 print(ColaPrioridadPila.Pop())
 print(ColaPrioridadPila.Pop())
 print(ColaPrioridadPila.Pop())
 print(ColaPrioridadPila.Pop())
 
-print("*********")
+print("********************")
 print(ColaPrioridadPila.Top())
