@@ -15,7 +15,7 @@ class PriorityQueueStack(ArrayHeap, PriorityQueueBase):
         self.prioridades = []
         self._head = 0
 
-    def push(self, value: Any) -> None:
+    def Push(self, value: Any) -> None:
         """Agrega el elemento elem en el tope de la pila.
 
         Args:
@@ -25,11 +25,12 @@ class PriorityQueueStack(ArrayHeap, PriorityQueueBase):
         self.prioridades.append(value)
 
         
-    def top(self) -> int:
+    def Top(self) -> int:
         """Devuelve (sin quitar) el elemento ubicado en el tope de la pila.
         Arroja una excepción si la pila está vacía.
         """
-
+        if(self.is_empty()):
+            raise Exception("La pila se encuentra vacía")
         return self._head
         
     def Pop(self) -> Any:
