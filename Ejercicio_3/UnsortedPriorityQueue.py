@@ -80,18 +80,3 @@ menores
         menor_tupla = self.min()
         self.prioridades.pop(self.prioridades.index(menor_tupla))
         return menor_tupla
-
-"""Pruebas hechas antes de colocarlas en la clase Unsorted_Priority_Queque """
-
-
-# colaDesordenada = UnsortedPriorityQueue()
-
-# colaDesordenada.add(42, "hola")
-# colaDesordenada.add(76, "adios")
-# colaDesordenada.add(36, "Hola mundo")
-
-# print(len(colaDesordenada))
-# print(colaDesordenada.is_empty())
-# print(colaDesordenada.min())
-# print(colaDesordenada.remove_min())
-# print(colaDesordenada.prioridades)
