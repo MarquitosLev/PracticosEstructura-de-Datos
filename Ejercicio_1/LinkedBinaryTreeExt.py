@@ -101,14 +101,16 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
             Returns:                        
                 int: devuelve el número de arcos entre la raíz y nodo. 0 si nodo es la raíz.
         """
-        act = self._search_parent(nodo)
-        if (not act):
+        if (self._root is None): 
+            return -1
+        padre = self._search_parent(nodo)
+        if (not padre):
             return 0     
         profundidad = 1
-        while act:
-            act = self._search_parent(act)
+        while padre:
+            padre = self._search_parent(padre)
 
-            if (not act):
+            if (not padre):
                 return profundidad
             else:
                 profundidad += 1
@@ -130,49 +132,3 @@ class LinkedBinaryTreeExt(LinkedBinaryTree, LinkedBinaryTreeExtAbstract):
 
         # Recorre recursivamente, saca la mayor altura de toda la iteracion
         return max(self.altura(nodo.left_child), self.altura(nodo.right_child)) + 1
-
-nodo_a = BinaryTreeNode('A')
-nodo_b = BinaryTreeNode('B')
-nodo_c = BinaryTreeNode('C')
-nodo_d = BinaryTreeNode('D')
-nodo_f = BinaryTreeNode('F')
-nodo_g = BinaryTreeNode('G')
-nodo_h = BinaryTreeNode('H')
-nodo_i = BinaryTreeNode('I')
-nodo_k = BinaryTreeNode('K')
-nodo_m = BinaryTreeNode('M')
-nodo_n = BinaryTreeNode('N')
-
-arbol = LinkedBinaryTreeExt()
-arbol.add_left_child(None, nodo_a)
-arbol.add_left_child(nodo_a, nodo_b)
-arbol.add_right_child(nodo_a, nodo_f)
-arbol.add_left_child(nodo_b, nodo_c)
-arbol.add_right_child(nodo_b, nodo_d)
-arbol.add_left_child(nodo_f, nodo_g)
-arbol.add_right_child(nodo_f, nodo_k)
-arbol.add_left_child(nodo_g, nodo_h)
-arbol.add_right_child(nodo_g, nodo_i)
-arbol.add_left_child(nodo_k, nodo_m)
-arbol.add_right_child(nodo_k, nodo_n)
-print(arbol)
-print("\n")
-
-print("***NODOS HERMANOS***")
-print(arbol.hermanos(nodo_c, nodo_d))
-print("\n")
-
-print("***HOJAS DEL ARBOL***")
-print(arbol.hojas())
-print("\n")
-
-print("***NODOS INTERNOS***")
-print(arbol.internos())
-print("\n")
-
-print("***ALTURA DE UN NODO***")
-print(arbol.altura(nodo_a))
-print("\n")
-
-print("***PROFUNDIDAD DE UN NODO***")
-print(arbol.profundidad(nodo_m))
